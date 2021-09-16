@@ -1,11 +1,19 @@
+import { Menu } from 'antd';
+import { MailOutlined, AppstoreOutlined } from '@ant-design/icons';
 
 
 const Navbar = () => (
-    <nav className="navbar navbar-dark bg-primary mb-3">
-        <div className="container">
-            <a className="navbarbrand" href=" " >MentorApp</a>
-        </div>
-    </nav>
+    <Menu mode="horizontal">
+        <Menu.Item key="mail" icon={<MailOutlined />}>
+          Mentor
+        </Menu.Item>
+        <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
+          Mentee
+        </Menu.Item>
+        <Menu.Item key="alipay">
+          Signup/Login
+        </Menu.Item>
+      </Menu>
 )
 
 export default Navbar;

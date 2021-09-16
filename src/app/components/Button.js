@@ -1,17 +1,18 @@
+import { Button } from 'antd';
 
-const Button = () => ({
-    text='Press me',
+const ButtonComponent = () => ({
+    text='Press me', 
     type='primary',
     onPress=()=>{},
     disabled
     })=>(
-    <button 
-       disabled={disabled}
-        className={`btn btn-${type}`}
+    <Button 
+        disabled={disabled}
+        type = {type}
         onClick={onPress}
     >
         {text}
-    </button>
+    </Button>
 )
 
-export default Button;
+export default ButtonComponent;

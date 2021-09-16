@@ -1,18 +1,16 @@
 import {Switch, Route} from 'react-router-dom'
-import Home from '/home'
-import Auth from '/auth'
-import Dashboard from '/dashboard'
+//wiews
+import Auth from './app/views/auth/Auth'
+import Home from './app/views/home/Home'
+import Profile from './app/views/profile/Profile'
 
 
 const Routes = () => (
     <Switch>
-        {/* EEl lado off */}
         <Route exact path="/" component={Home} />,
         <Route exact path="/login" component={Auth} />,
         <Route exact path="/signup" component={Auth} />,
-        <Route  path="/main" component={Dashboard} />
-        {/* registro ssubir proyecto */}
-        {/* Admin crear mentor */}
+        <Route exact path="/profile" component={Profile} />
     </Switch>
 );
 

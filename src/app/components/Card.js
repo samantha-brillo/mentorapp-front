@@ -1,17 +1,15 @@
-const Card = ({img,children}) => (
-    <div className="card">
-        {/* esto eess un if ternario y validamos si exite imagen 
-            de lo contrario renderizara otra 
-         */}
-        {img ?
-            <img src={img} alt="User" className="card-img-top"/>
-            :
-            ''
-        }
-        <div className="card-body">
-            {children}
-        </div>
-    </div>
+import { Card } from 'antd';
+
+const { Meta } = Card;
+
+const CardComponent = ({img,children}) => (
+    <Card
+    hoverable
+    style={{ width: 240 }}
+    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+  >
+    <Meta title="Nombre" description=" " />
+  </Card>
 )
     
-    export default Card;
+    export default CardComponent;
