@@ -5,12 +5,17 @@ import {loginEndpoint, signupEndpoint, signupGoogle} from '../../services/auth-w
 const {Content} = Layout
 
 
-export default function Auth ({match}) {
+export default function Auth ({match, history}) {
     const onFinish = async (values) => {
      try{
         const create = match.path === '/signup' ? signupEndpoint : loginEndpoint
-        const {data} = create(values)
-        console.log (data)
+        const {data} = await create(values)
+        localStorage.setItem("user", JSON.stringify(data.user))
+        if (match.path === "/signup") {
+            history.push("/login")
+        }else{
+            history.push("/profile")
+        }
      }catch(error){
         console.log (error)
      }
@@ -40,13 +45,13 @@ export default function Auth ({match}) {
                     <Input />
                 </Form.Item>
 
-                <Form.Item 
+                {match.path === "/signup" &&  <Form.Item 
                 label="Email"
                 name="email"
                 >
                     <Input/>
                     
-                </Form.Item>
+                </Form.Item>}
 
                 <Form.Item
                     label="Password"

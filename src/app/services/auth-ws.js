@@ -11,5 +11,7 @@ export const signupGoogle = () => _api.get('/auth/google')
 
 export const updateUser = (data) => _api.patch ('/auth/update',data)
 
+export const getList = (data) => _api.get (`/auth/getlist/${data}`)
+
 
 
