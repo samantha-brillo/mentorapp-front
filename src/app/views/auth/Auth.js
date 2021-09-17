@@ -5,9 +5,16 @@ import {loginEndpoint, signupEndpoint, signupGoogle} from '../../services/auth-w
 const {Content} = Layout
 
 
-export default function Auth () {
-    const onFinish = (values) => {
-        console.log('Success:', values);
+export default function Auth ({match}) {
+    const onFinish = async (values) => {
+     try{
+        const create = match.path === '/signup' ? signupEndpoint : loginEndpoint
+        const {data} = create(values)
+        console.log (data)
+     }catch(error){
+        console.log (error)
+     }
+    
       };
     
       const onFinishFailed = (errorInfo) => {
