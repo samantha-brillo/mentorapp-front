@@ -5,9 +5,10 @@ export const loginEndpoint = (data) => _api.post('/auth/login',data);
 
 export const signupEndpoint = (data) => _api.post('/auth/signup',data);
 
-export const logoutEndpoint = () => _api.post('/auth/logout')
+export const logoutEndpoint = () => _api.get('/auth/logout')
 
+export const signupGoogle = () => _api.get('/auth/google') 
 
-
+export const updateUser = (data) => _api.patch ('/auth/update',data)
 
 

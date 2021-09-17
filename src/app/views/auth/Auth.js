@@ -1,6 +1,6 @@
 import React,  {Component} from 'react';
-import {Link} from 'react-router-dom';
 import { Form, Input, Button, Checkbox, Layout } from 'antd';
+import {loginEndpoint, signupEndpoint, signupGoogle} from '../../services/auth-ws'
 
 const {Content} = Layout
 
@@ -31,6 +31,14 @@ export default function Auth () {
                     rules={[{ required: true, message: 'Please input your username!' }]}
                 >
                     <Input />
+                </Form.Item>
+
+                <Form.Item 
+                label="Email"
+                name="email"
+                >
+                    <Input/>
+                    
                 </Form.Item>
 
                 <Form.Item
