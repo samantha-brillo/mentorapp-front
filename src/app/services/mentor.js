@@ -9,5 +9,5 @@ export const createMentor = (data) => {
 }
 
 export const updateMentor = (data) => {
-    _api.post('/create_mentor')
+    _api.patch('/update_mentor')
 }

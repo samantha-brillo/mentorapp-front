@@ -9,6 +9,6 @@ export const createMentee = (data) => {
 }
 
 export const updateMentee = (data) => {
-    _api.post('/update_mentee')
+    _api.patch('/update_mentee')
 }
 

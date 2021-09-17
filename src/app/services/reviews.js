@@ -9,5 +9,5 @@ export const createReviews = (data) => {
 }
 
 export const updateReviews = (data) => {
-    _api.post('/create_reviews')
+    _api.patch('/update_reviews')
 }
