@@ -12,3 +12,4 @@ export const signupGoogle = () => _api.get('/auth/google')
 export const updateUser = (data) => _api.patch ('/auth/update',data)
 
 
+
